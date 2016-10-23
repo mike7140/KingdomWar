@@ -1,0 +1,16 @@
+name: KingdomWar
+main: KingdomWar\Main
+version: 1
+api: [1.10.0]
+load: POSTWORLD
+author: mike7140
+commands:
+ jobs:
+  description: "Jobコマンド"
+  default: true
+ shop:
+  description: "shopコマンド"
+  default: true
+ change:
+  description: "changeコマンド"
+  default: true
