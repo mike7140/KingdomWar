@@ -286,6 +286,15 @@ class Main extends PluginBase implements Listener {
 			}
 		}
 	}
+	public function onPlayerLogin(PlayerLoginEvent $event) {
+		$player = $event->getPlayer();
+		$x = $this->getServer()->getDefaultLevel()->getSafeSpawn()->getX();
+		$y = $this->getServer()->getDefaultLevel()->getSafeSpawn()->getY();
+		$z = $this->getServer()->getDefaultLevel()->getSafeSpawn()->getZ();
+		$level = $this->getServer()->getDefaultLevel();
+		$player->setLevel($level);
+		$player->teleport(new Vector3($x, $y, $z, $level));
+	}
 	public function onJoin(PlayerJoinEvent $event){
 		$player = $event->getPlayer();
 		$player->sendMessage("§e====================");
