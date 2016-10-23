@@ -84,11 +84,11 @@ class Main extends PluginBase implements Listener {
         	$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		if (!file_exists($this->getDataFolder())) {
             		mkdir($this->getDataFolder(), 0744, true);
-	    		$this->fp = new Config($this->getDataFolder() . "../../../../../../../var/www/html/ban_data/fp.json", Config::JSON, array());
+	    		$this->fp = new Config($this->getDataFolder() . "fp.json", Config::JSON, array());
 			$this->pd = new Config($this->getDataFolder() . "pd.json", Config::JSON, array());
 			$this->pos = new Config($this->getDataFolder() . "pos.json", Config::JSON, array());
 		}
-    		$this->fp = new Config($this->getDataFolder() . "../../../../../../../var/www/html/ban_data/fp.json", Config::JSON, array());
+    		$this->fp = new Config($this->getDataFolder() . "fp.json", Config::JSON, array());
 		$this->pd = new Config($this->getDataFolder() . "pd.json", Config::JSON, array());
 		$this->pos = new Config($this->getDataFolder() . "pos.json", Config::JSON, array());
 		$this->team["東"] = 0;
@@ -116,10 +116,6 @@ class Main extends PluginBase implements Listener {
 		$this->core["支配"]["西"] = "西";
 		$this->core["支配"]["北西"] = "西";
 		$this->core["支配"]["聖地"] = "なし";
-		$this->eids = [];
-		$this->pa = [];
-		$this->pp = 0;
-		$this->pps = 0;
 		$this->getServer()->getScheduler()->scheduleRepeatingTask(new CallbackTask([$this,"MessageTask"]), 20);
 		for($aa = 1; $aa < 13; $aa++){
 			if($aa == 1){
